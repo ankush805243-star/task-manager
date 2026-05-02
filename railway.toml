@@ -4,7 +4,7 @@ installCommand = "npm install --legacy-peer-deps && cd server && npm install --l
 buildCommand = "cd client && npm run build"
 
 [deploy]
-startCommand = "cd server && npx prisma migrate deploy && node src/index.js"
+startCommand = "cd server && npx prisma db push --accept-data-loss && node src/index.js"
 healthcheckPath = "/api/health"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
