@@ -1,8 +1,8 @@
 # TaskFlow — Team Task Manager
 
 A full-stack web application for managing team projects and tasks with role-based access control (Admin/Member).
-
-(task-manager-production-b4c0.up.railway.app)
+Your site is live at:
+task-manager-production-b4c0.up.railway.app
 
 ## 🚀 Features
 
