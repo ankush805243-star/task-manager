@@ -12,10 +12,6 @@ const dashboardRoutes = require('./routes/dashboard');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-if (!process.env.JWT_SECRET) {
-  console.error('FATAL ERROR: JWT_SECRET environment variable is not set!');
-  process.exit(1);
-}
 
 // Middleware
 app.use(cors());
