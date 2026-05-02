@@ -12,6 +12,11 @@ const dashboardRoutes = require('./routes/dashboard');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+if (!process.env.JWT_SECRET) {
+  console.error('FATAL ERROR: JWT_SECRET environment variable is not set!');
+  process.exit(1);
+}
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -46,9 +51,7 @@ app.use((err, req, res, next) => {
   console.error('Error:', err);
   const statusCode = err.statusCode || 500;
   res.status(statusCode).json({
-    error: process.env.NODE_ENV === 'production'
-      ? 'Internal server error'
-      : err.message,
+    error: err.message, // Temporarily show actual error in production for debugging
   });
 });
 
